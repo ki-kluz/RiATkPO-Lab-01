@@ -1,0 +1,52 @@
+@startuml function-tree
+title Дерево функций. Система УЛО
+
+left to right direction
+
+rectangle "Система УЛО" as root
+
+rectangle "Организации\nи доступ" as g1
+rectangle "FE-1 Иерархия\nорганизаций" as fe1
+rectangle "FE-2 Пользователи\nи роли" as fe2
+
+rectangle "Номенклатуры\nи сборы" as g2
+rectangle "FE-3 Номенклатуры" as fe3
+rectangle "FE-4 Сборы" as fe4
+
+rectangle "Заявки" as g3
+rectangle "FE-5 Заявка\nна одном экране" as fe5
+rectangle "FE-6 Расчет\nи контроль" as fe6
+rectangle "FE-7 Согласование\nи доработка" as fe7
+rectangle "FE-8 Сведение\nзаявок" as fe8
+rectangle "FE-9 Изменения\nмежду уровнями" as fe9
+
+rectangle "Контроль\nи отчетность" as g4
+rectangle "FE-10 Не сдавшие\nзаявку" as fe10
+rectangle "FE-11 Уведомления" as fe11
+rectangle "FE-12 История" as fe12
+rectangle "FE-13 Отчет\nпо заявке" as fe13
+
+rectangle "Интеграции" as g5
+rectangle "FE-14 API поставщиков\n(выпуск 2), МИС (выпуск 3)" as fe14
+
+root --> g1
+root --> g2
+root --> g3
+root --> g4
+root --> g5
+g1 --> fe1
+g1 --> fe2
+g2 --> fe3
+g2 --> fe4
+g3 --> fe5
+g3 --> fe6
+g3 --> fe7
+g3 --> fe8
+g3 --> fe9
+g4 --> fe10
+g4 --> fe11
+g4 --> fe12
+g4 --> fe13
+g5 --> fe14
+
+@enduml
