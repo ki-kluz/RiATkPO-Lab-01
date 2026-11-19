@@ -1,0 +1,43 @@
+@startuml usecase
+left to right direction
+actor "Системный\nадминистратор" as Admin
+actor "Поставщик" as Supplier
+actor "Модератор\nзаявок" as Moderator
+actor "Сотрудник-\nзаявитель" as Applicant
+actor "Руководитель" as Head
+actor "Ответственное\nдолжностное лицо" as Official
+rectangle "УЛО. Заявки на лекарства" {
+  usecase "Настроить доступ" as UC1
+  usecase "Вести номенклатуру" as UC2
+  usecase "Открыть сбор" as UC3
+  usecase "Подать заявку" as UC4
+  usecase "Проверить ограничения\nзаявки" as UC5
+  usecase "Доработать заявку" as UC6
+  usecase "Проверить заявку" as UC7
+  usecase "Согласовать заявку" as UC8
+  usecase "Свести заявки" as UC9
+  usecase "Согласовать изменение\nзаявки" as UC10
+  usecase "Контролировать подачу\nзаявок" as UC11
+  usecase "Получить уведомление" as UC12
+  usecase "Просмотреть историю" as UC13
+  usecase "Получить отчет по заявке" as UC14
+}
+Admin --> UC1
+Supplier --> UC2
+Moderator --> UC2
+Moderator --> UC3
+Applicant --> UC4
+Applicant --> UC6
+Moderator --> UC7
+Head --> UC8
+Moderator --> UC9
+Head --> UC10
+Moderator --> UC11
+Applicant --> UC12
+Moderator --> UC12
+Head --> UC12
+Official --> UC13
+Official --> UC14
+UC4 ..> UC5 : include
+UC6 ..> UC5 : include
+@enduml
