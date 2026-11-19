@@ -1,5 +1,6 @@
 @startuml usecase
 left to right direction
+actor "Сотрудник с правом\nсоздания сбора" as CollectionOwner
 actor "Системный\nадминистратор" as Admin
 actor "Поставщик" as Supplier
 actor "Модератор\nзаявок" as Moderator
@@ -17,7 +18,7 @@ rectangle "УЛО. Заявки на лекарства" {
   usecase "Согласовать заявку" as UC8
   usecase "Свести заявки" as UC9
   usecase "Согласовать изменение\nзаявки" as UC10
-  usecase "Контролировать подачу\nзаявок" as UC11
+  usecase "Контролировать отправку\nнапоминаний" as UC11
   usecase "Получить уведомление" as UC12
   usecase "Просмотреть историю" as UC13
   usecase "Получить отчет по заявке" as UC14
@@ -25,7 +26,7 @@ rectangle "УЛО. Заявки на лекарства" {
 Admin --> UC1
 Supplier --> UC2
 Moderator --> UC2
-Moderator --> UC3
+CollectionOwner --> UC3
 Applicant --> UC4
 Applicant --> UC6
 Moderator --> UC7
